@@ -1,0 +1,16 @@
+const double size5 = 5.0;
+const double size10 = 10.0;
+const double size12 = 12.0;
+const double size13 = 13.0;
+const double size14 = 14.0;
+const double size15 = 15.0;
+const double size16 = 16.0;
+const double size17 = 17.0;
+const double size18 = 18.0;
+const double size19 = 19.0;
+const double size20 = 20.0;
+const double size23 = 23.0;
+const double size25 = 25.0;
+const double size27 = 27.0;
+const double size28 = 28.0;
+const double size30 = 30.0;
