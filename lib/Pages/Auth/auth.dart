@@ -1,11 +1,11 @@
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:lux_mobile/Constants/rang.dart';
 import 'package:lux_mobile/Pages/HomePage/homepage.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:lux_mobile/Pages/Login/loginpage.dart';
+import 'package:lux_mobile/Pages/Register/registerpage.dart';
 
 class Auth extends StatefulWidget {
   const Auth({Key? key}) : super(key: key);
@@ -15,8 +15,6 @@ class Auth extends StatefulWidget {
 }
 
 class _AuthState extends State<Auth> {
-
-
   Future<void> inLoginFun() async {
     Navigator.pushReplacement(
       context,
@@ -48,7 +46,6 @@ class _AuthState extends State<Auth> {
     return false;
   }
 
-
   @override
   void initState() {
     super.initState();
@@ -60,218 +57,122 @@ class _AuthState extends State<Auth> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        color: cBackColor,
+        color: cWhiteColor,
         child: Center(
-          child: ListView(
-            padding: const EdgeInsets.all(30),
-            shrinkWrap: true,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              const Spacer(),
+              Image.asset("assets/images/logolux2.png"),
               const SizedBox(
-                width:5,
-                height: 120,
+                height: 40,
               ),
-              SizedBox(
-                width: 120,
-                height: 50,
-                child: Container(
-                  height: 30,
-                  width: 120,
-                  decoration: BoxDecoration(
-                    color: cFirstColor,
-                    shape: BoxShape(
-
-                    )
-                  ),
-                ),
-              ),
-
+              const Text('Xush kelibsiz', style: TextStyle(color: cFirstColor, fontSize: 26, fontWeight: FontWeight.bold),),
               const SizedBox(
-                height: 65,
+                height: 30,
               ),
-              /// --------------------------------------
-              /// Text Form Field for submitting Login
-              /// --------------------------------------
-
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: cGrayColor1),
-                height: 55,
-                padding: const EdgeInsets.fromLTRB(15, 2, 5, 0),
-                child: Center(
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/icons/call.svg',
-                        color: cTextColor2,
-                      ),
-                      const SizedBox(width: 6,),
-                      const Text(
-                        '+998(',
-                        style:
-                        TextStyle(fontSize: 16, color: cTextColor2),
-                      ),
-                      Expanded(
-                        child: TextFormField(
-                          inputFormatters: [maskFormatter],
-                          keyboardType: TextInputType.phone,
-                          cursorColor: cTextColor2,
-                          controller: login,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            prefixIconConstraints: BoxConstraints(
-                              maxWidth: 30,
-                              maxHeight: 30,
-                              minHeight: 25,
-                              minWidth: 25,
-                            ),
-                          ),
-                          style:
-                          const TextStyle(fontSize: 16, color: cTextColor2),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-
-
-
-              const SizedBox(
-                height: 20,
-              ),
-
-              /// --------------------------------------
-              /// Text Form Field for submitting password
-              /// --------------------------------------
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: cGrayColor1),
-                height: 55,
-                padding: const EdgeInsets.fromLTRB(15, 0, 5, 0),
-                child: Center(
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    obscureText: !textVisible,
-                    cursorColor: cTextColor2,
-                    controller: pass,
-                    decoration: InputDecoration(
-                      hintText: 'Парол',
-                      hintStyle: const TextStyle(
-                        color: cTextColor,
-                        fontSize: 14,
-                      ),
-                      border: InputBorder.none,
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          textVisible
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          color: cTextColor2,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            textVisible = !textVisible;
-                          });
-                        },
-                      ),
-                      prefixIconConstraints: const BoxConstraints(
-                        maxWidth: 30,
-                        maxHeight: 30,
-                        minHeight: 25,
-                        minWidth: 25,
-                      ),
-                      contentPadding:
-                      const EdgeInsets.only(top: 15 // HERE THE IMPORTANT PART
-                      ),
-                      prefixIcon: Padding(
-                        padding: const EdgeInsets.fromLTRB(2.0, 0, 6.0, 0),
-                        child: SvgPicture.asset(
-                          'assets/icons/pass_lock.svg',
-                          color: cTextColor2,
-                        ),
-                      ),
+              InkResponse(
+                onTap:() {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
                     ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Пожалуйста, введите пароль';
-                      }
-                      return null;
-                    },
-                    style: const TextStyle(fontSize: 16, color: cTextColor2),
+                  );
+                },
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                  decoration: const BoxDecoration(
+                    // border: Border.all(color: cFirstColor, width: 4),
+                    color: cFirstColor,
+                    borderRadius: BorderRadius.all(Radius.circular(6)),
+                  ),
+                  height: 55,
+                  padding: const EdgeInsets.fromLTRB(15, 2, 5, 0),
+                  child: const Center(
+                    child: Text("Tizimga kirish", style: TextStyle(color: cWhiteColor, fontSize: 19),),
                   ),
                 ),
               ),
-
               const SizedBox(
-                height: 25,
+                height: 30,
+              ),
+              InkResponse(
+                onTap:() {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ),
+                  );
+                },
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: cFirstColor, width: 2),
+                    color: Colors.transparent,
+                    borderRadius: const BorderRadius.all(Radius.circular(6)),
+                  ),
+                  height: 55,
+                  padding: const EdgeInsets.fromLTRB(15, 2, 5, 0),
+                  child: const Center(
+                    child: Text("Mehmon sifatida", style: TextStyle(color: cFirstColor, fontSize: 19),),
+                  ),
+                ),
+              ),
+              const Spacer(),
+              const Center(
+                child: Text(
+                  "Mexmon sifatida kirish sizga dasturdan to'liq foydalanish imkoniyatini bermaydi! Iltimos ro'yhatdan o'ting",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 13,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 5,
               ),
 
-              /// --------------------------------------
-              /// MaterialButton for execute sign in button
-              /// --------------------------------------
-
-              MaterialButton(
-                onPressed: () {
+              InkWell(
+                onTap: () {
                   check().then((intenet) async {
                     if (intenet) {
-                      if (login.text.isEmpty) {
-                        //   _showToast(context,
-                        //       'Пожалуйста, попробуйте еще раз, введя номер телефона');
-                        // } else if (pass.text.isEmpty) {
-                        //   _showToast(
-                        //       context, 'Введите пароль и попробуйте еще раз');
-                        // } else {
-                        inLoginFun();
-                      }
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterPage(),
+                        ),
+                      );
                     } else if (!intenet) {
                       _showToast(
                           context, 'проверьте ваше интернет-соединение');
                     }
                   });
                 },
-                //since this is only a UI app
-                child: loading
-                    ? _widget
-                    : const Text(
-                  'Войти',
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontFamily: 'Nudity',
-                    fontWeight: FontWeight.w400,
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Ro'yxatdan o'tish",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: cFirstColor,
+                      fontSize: 13,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                 ),
-                color: cFirstColor,
-                elevation: 0,
-                height: 55,
-                textColor: Colors.white,
-
-                /// --------------------------------------
-                /// changing border shape of material button.
-                /// --------------------------------------
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14)),
               ),
-
-              /// --------------------------------------
-              /// Text Don't have an account.
-              /// --------------------------------------
               const SizedBox(
-                height: 10,
+                height: 5,
               ),
 
-              const Center(
-                child: Text(
-                  "Сизнинг соғлиғингиз  бизнинг вазифамиз!",
-                  style: TextStyle(color: cFirstColor, fontSize: 20, fontWeight: FontWeight.w700, fontFamily: 'Nuditys'),
-                ),
-              ),
             ],
           ),
         ),
       ),
     );
   }
-
 }
