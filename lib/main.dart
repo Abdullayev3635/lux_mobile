@@ -23,3 +23,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class App {
+  static Widget getWidget(Widget child, [EdgeInsets pad = const EdgeInsets.all(16.0)]) => Container(padding: pad, child: child,);
+}
