@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lux_mobile/Constants/rang.dart';
 
-class Test extends StatefulWidget {
-  const Test({Key? key}) : super(key: key);
+class Doktorlar extends StatefulWidget {
+  const Doktorlar({Key? key}) : super(key: key);
 
   @override
-  _TestState createState() => _TestState();
+  _DoktorlarState createState() => _DoktorlarState();
 }
 
-class _TestState extends State<Test> {
+class _DoktorlarState extends State<Doktorlar> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,7 +39,7 @@ class _TestState extends State<Test> {
                     ),
                   ),
                   const Text(
-                    "Psixalagik test",
+                    "Shifokorlar",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontWeight: FontWeight.w400,

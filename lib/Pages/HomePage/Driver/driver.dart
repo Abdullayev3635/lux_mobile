@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lux_mobile/Constants/rang.dart';
+import 'package:lux_mobile/Pages/DasturHaqida/dasturhaqida.dart';
+import 'package:lux_mobile/Pages/Foydali/foydali.dart';
 import 'package:lux_mobile/Pages/History/history.dart';
+import 'package:lux_mobile/Pages/KoriklarTarixi/koriklartarixi.dart';
+import 'package:lux_mobile/Pages/Sozlama/sozlama.dart';
+import 'package:lux_mobile/Pages/Yangiliklar/yangiliklar.dart';
 
 class Driwer extends StatelessWidget {
   const Driwer({Key? key}) : super(key: key);
@@ -59,7 +64,7 @@ class Driwer extends StatelessWidget {
           leading: const Icon(Icons.history, color: cFirstColor,),
           onTap: () {
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => const History()));
+                .push(MaterialPageRoute(builder: (context) => const KoriklarTarixi()));
             // Navigator.pushNamed(context, Routes.noInternet);
           },
         ),
@@ -73,7 +78,7 @@ class Driwer extends StatelessWidget {
           leading: const Icon(Icons.settings_outlined, color: cFirstColor,),
           onTap: () {
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => const History()));
+                .push(MaterialPageRoute(builder: (context) => const Sozlama()));
             // Navigator.pushNamed(context, Routes.noInternet);
           },
         ),
@@ -87,7 +92,7 @@ class Driwer extends StatelessWidget {
           leading: const Icon(Icons.phone_android_outlined, color: cFirstColor,),
           onTap: () {
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => const History()));
+                .push(MaterialPageRoute(builder: (context) => const DasturHaqida()));
             // Navigator.pushNamed(context, Routes.noInternet);
           },
         ),
@@ -101,7 +106,7 @@ class Driwer extends StatelessWidget {
           leading: const Icon(Icons.verified_user_outlined, color: cFirstColor,),
           onTap: () {
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => const History()));
+                .push(MaterialPageRoute(builder: (context) => const Foydali()));
             // Navigator.pushNamed(context, Routes.noInternet);
           },
         ),
@@ -115,7 +120,7 @@ class Driwer extends StatelessWidget {
           leading: const Icon(Icons.notification_important_outlined, color: cFirstColor,),
           onTap: () {
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => const History()));
+                .push(MaterialPageRoute(builder: (context) => const Yangiliklar()));
             // Navigator.pushNamed(context, Routes.noInternet);
           },
         ),

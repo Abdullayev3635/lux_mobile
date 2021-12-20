@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lux_mobile/Constants/rang.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:lux_mobile/Pages/BaxtingniTop/baxtingnitop.dart';
 import 'package:lux_mobile/Pages/Chat/chat.dart';
-import 'package:lux_mobile/Pages/OivZaqida/oivxaqida.dart';
+import 'package:lux_mobile/Pages/Doktorlar/doktorlar.dart';
+import 'package:lux_mobile/Pages/Migrantlar/migrantlar.dart';
+import 'package:lux_mobile/Pages/OivXaqida/oivxaqida.dart';
+import 'package:lux_mobile/Pages/Qiziqarli/qiziqarli.dart';
 import 'package:lux_mobile/Pages/Test/test.dart';
 import 'Driver/driver.dart';
 
@@ -261,7 +265,14 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const Doktorlar(),
+                                      ),
+                                    );
+                                  },
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
@@ -307,7 +318,14 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const BaxtingniTop(),
+                                      ),
+                                    );
+                                  },
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
@@ -360,7 +378,14 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const Qiziqarli(),
+                                      ),
+                                    );
+                                  },
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
@@ -406,7 +431,14 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const Migrantlar(),
+                                      ),
+                                    );
+                                  },
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:

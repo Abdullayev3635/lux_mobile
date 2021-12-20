@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lux_mobile/Constants/rang.dart';
 
-class OivXaqida extends StatefulWidget {
-  const OivXaqida({Key? key}) : super(key: key);
+class Yangiliklar extends StatefulWidget {
+  const Yangiliklar({Key? key}) : super(key: key);
 
   @override
-  _OivXaqidaState createState() => _OivXaqidaState();
+  _YangiliklarState createState() => _YangiliklarState();
 }
 
-class _OivXaqidaState extends State<OivXaqida> {
+class _YangiliklarState extends State<Yangiliklar> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,7 +19,7 @@ class _OivXaqidaState extends State<OivXaqida> {
           children: <Widget>[
             Container(
               decoration: const BoxDecoration(
-                color: cFirstColor
+                  color: cFirstColor
               ),
               padding: const EdgeInsets.only(
                   left: 20, right: 25, top: 15, bottom: 15),
@@ -39,7 +39,7 @@ class _OivXaqidaState extends State<OivXaqida> {
                     ),
                   ),
                   const Text(
-                    "OIV Haqida",
+                    "Yangiliklar",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
