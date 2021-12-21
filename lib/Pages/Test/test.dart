@@ -10,7 +10,7 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
-  int _groupValue = 0;
+  int _groupValue = 10;
   int _groupValue2 = 0;
   int _groupValue3 = 0;
   @override

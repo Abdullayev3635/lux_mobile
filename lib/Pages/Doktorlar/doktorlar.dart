@@ -1,7 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lux_mobile/Constants/rang.dart';
+import 'package:lux_mobile/Pages/Doktorlar/DoktorInfo/doktorinfo.dart';
 import 'package:lux_mobile/Pages/Models/doktormodel.dart';
 
 class Doktorlar extends StatefulWidget {
@@ -15,16 +15,43 @@ class _DoktorlarState extends State<Doktorlar> {
   List<DoktorModel> _list = [];
 
   void _load() async {
-    _list.add(DoktorModel(
-        name: "Xasanov",
-        time: "12:50",
-        izoh: "Qalesiz nima gap Qalesiz nima gap Qalesiz nima gap Qalesiz nima gap Qalesiz nima gap Qalesiz nima gap "));
     _list.add(
-        DoktorModel(name: "Xasanov", time: "12:50", izoh: "Qalesiz nima gap"));
+      DoktorModel(
+        name: "Abdullaev Olloyor",
+        time: "11:30",
+        izoh:
+            "Tibbiy martaba yoki kasb tibbiy maktabda o'qishni va sizning malakangizni tasdiqlovchi tibbiy ma'lumotnomani olishni talab qiladi. ",
+        image: "assets/images/abdullayev.jpg",
+      ),
+    );
     _list.add(
-        DoktorModel(name: "Xasanov", time: "12:50", izoh: "Qalesiz nima gap"));
+      DoktorModel(
+        name: "Mamurov G'olibjon",
+        time: "8:00",
+        izoh:
+            "Dunyo bo'ylab tibbiyot maktablari talabalarga bakalavriat, magistratura va hattoki doktorlik darajalari kabi turli darajalarda sifatli tibbiy ta'lim beradi",
+        image: "assets/images/img_4.png",
+      ),
+    );
     _list.add(
-        DoktorModel(name: "Xasanov", time: "12:50", izoh: "Qalesiz nima gap"));
+      DoktorModel(
+        name: "Izzatullayev Kamolxon",
+        time: "9:50",
+        izoh:
+            "Odamlar tibbiyot maktabida o'qishni va tibbiyot darajasini o'rganishni tanlashining sabablari juda ko'p. Bu shaxsiy qo'ng'iroqdan tortib to hisoblangan moliyaviy daromadgacha",
+        image: "assets/images/img_5.png",
+      ),
+    );
+    _list.add(
+      DoktorModel(
+        name: "Yoqubov Umidjon",
+        time: "10:20",
+        izoh:
+            "Chet eldagi eng yaxshi tibbiyot maktabida tibbiyotni o'rganish uzoq muddatli majburiyat va beparvo bo'lmaslik kerak bo'lgan qaror",
+        image: "assets/images/img_6.png",
+      ),
+    );
+
     setState(() {});
   }
 
@@ -74,22 +101,30 @@ class _DoktorlarState extends State<Doktorlar> {
                 ],
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: ListView.builder(
-                  itemCount: _list.length,
-                  physics: const BouncingScrollPhysics(),
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return Container(
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ListView.builder(
+                itemCount: _list.length,
+                physics: const BouncingScrollPhysics(),
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DoktorInfo(tovarList: _list[index]),
+                        ),
+                      );
+                    },
+                    child: Container(
                       margin: const EdgeInsets.symmetric(vertical: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: cWhiteColor,
                       ),
                       child: SizedBox(
-                        height: 110,
+                        height: 100,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -101,8 +136,7 @@ class _DoktorlarState extends State<Doktorlar> {
                               width: 70,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(35),
-                                child:
-                                    Image.asset("assets/images/abdullayev.jpg"),
+                                child: Image.asset(_list[index].image, fit: BoxFit.fill,),
                               ),
                             ),
                             const SizedBox(
@@ -115,7 +149,8 @@ class _DoktorlarState extends State<Doktorlar> {
                                 Text(
                                   _list[index].name,
                                   style: const TextStyle(
-                                      fontSize: 16, fontWeight: FontWeight.bold),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 const SizedBox(
                                   height: 10,
@@ -136,13 +171,15 @@ class _DoktorlarState extends State<Doktorlar> {
                               style: const TextStyle(
                                   color: cBlackColor, fontSize: 14),
                             ),
-                            const SizedBox(width: 25,),
+                            const SizedBox(
+                              width: 25,
+                            ),
                           ],
                         ),
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
           ],

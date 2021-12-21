@@ -140,6 +140,7 @@ class _HomePageState extends State<HomePage> {
                             Expanded(
                               child: Container(
                                 decoration: BoxDecoration(
+                                  // border: Border.all(color: cFirstColor, width: 4),
                                   borderRadius: BorderRadius.circular(14),
                                   color: cWhiteColor,
                                   boxShadow: const [
@@ -155,18 +156,18 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const OivXaqida(),
+                                        builder: (context) => const Qiziqarli(),
                                       ),
                                     );
                                   },
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     mainAxisSize: MainAxisSize.max,
                                     children: const [
                                       Icon(
-                                        Icons.info_outline,
+                                        Icons.verified_outlined,
                                         color: cFirstColor,
                                         size: 32,
                                       ),
@@ -174,12 +175,11 @@ class _HomePageState extends State<HomePage> {
                                         height: 12,
                                       ),
                                       Text(
-                                        "OIV bu...",
+                                        'Zerikdingizmi?',
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             color: cFirstColor,
-                                            fontSize: 12,
-                                            letterSpacing: 2),
+                                            fontSize: 12),
                                       ),
                                     ],
                                   ),
@@ -363,10 +363,10 @@ class _HomePageState extends State<HomePage> {
                       Expanded(
                         child: Row(
                           children: [
+
                             Expanded(
                               child: Container(
                                 decoration: BoxDecoration(
-                                  // border: Border.all(color: cFirstColor, width: 4),
                                   borderRadius: BorderRadius.circular(14),
                                   color: cWhiteColor,
                                   boxShadow: const [
@@ -382,18 +382,18 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const Qiziqarli(),
+                                        builder: (context) => const OivXaqida(),
                                       ),
                                     );
                                   },
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     mainAxisSize: MainAxisSize.max,
                                     children: const [
                                       Icon(
-                                        Icons.verified_outlined,
+                                        Icons.info_outline,
                                         color: cFirstColor,
                                         size: 32,
                                       ),
@@ -401,11 +401,12 @@ class _HomePageState extends State<HomePage> {
                                         height: 12,
                                       ),
                                       Text(
-                                        'Zerikdingizmi?',
+                                        "OIV bu...",
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             color: cFirstColor,
-                                            fontSize: 12),
+                                            fontSize: 12,
+                                            letterSpacing: 2),
                                       ),
                                     ],
                                   ),

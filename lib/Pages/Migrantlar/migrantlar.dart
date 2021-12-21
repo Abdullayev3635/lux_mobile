@@ -14,13 +14,10 @@ class _MigrantlarState extends State<Migrantlar> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: ListView(
-          shrinkWrap: true,
+        body: Column(
           children: <Widget>[
             Container(
-              decoration: const BoxDecoration(
-                  color: cFirstColor
-              ),
+              decoration: const BoxDecoration(color: cFirstColor),
               padding: const EdgeInsets.only(
                   left: 20, right: 25, top: 15, bottom: 15),
               child: Row(
@@ -51,6 +48,10 @@ class _MigrantlarState extends State<Migrantlar> {
                 ],
               ),
             ),
+            const Expanded(
+                child: Center(
+              child: Text('Bu qismi hali mavjud emas'),
+            ))
           ],
         ),
       ),
